@@ -4,6 +4,14 @@ import streamlit as st
 import numpy as np
 import cv2
 
+base = "dark"
+primaryColor = "#1DB954"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
+
+import streamlit as st
 hide_streamlit_cloud_elements = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -14,6 +22,7 @@ hide_streamlit_cloud_elements = """
     button[kind="icon"] {display: none !important;}
     </style>
 """
+st.markdown(hide_streamlit_cloud_elements, unsafe_allow_html=True)
 def format_bytes(size):
     for unit in ['Bytes', 'KB', 'MB', 'GB']:
         if size < 1024:
