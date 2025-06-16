@@ -4,7 +4,16 @@ import streamlit as st
 import numpy as np
 import cv2
 
-
+hide_streamlit_cloud_elements = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    .stDeployButton {display: none;}
+    a[title="View source"] {display: none !important;}
+    button[kind="icon"] {display: none !important;}
+    </style>
+"""
 def format_bytes(size):
     for unit in ['Bytes', 'KB', 'MB', 'GB']:
         if size < 1024:
@@ -12,7 +21,6 @@ def format_bytes(size):
         size /= 1024
     return f"{size:.2f} TB"
 
-st.set_page_config(page_title="Image Resizer", layout="centered")
 st.header("Welcome To Resize Your Image")
 img=st.file_uploader("Upload Your Image",type=["jpeg","jpg","png"])
 if img:
